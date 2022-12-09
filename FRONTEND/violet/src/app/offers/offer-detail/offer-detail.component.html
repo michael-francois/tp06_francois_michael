@@ -1,0 +1,10 @@
+<div class="p-3 m-0">
+  <div *ngIf="offer" class="card">
+    <img src="{{offer.img}}" alt="Offer image" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{offer.name}}</h5>
+      <p class="card-text">{{offer.price}} €</p>
+      <div class="btn btn-primary mb-2" (click)="addToCart()">Add to cart</div>
+    </div>
+  </div>
+</div>

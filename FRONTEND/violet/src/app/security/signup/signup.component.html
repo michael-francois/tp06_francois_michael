@@ -1,0 +1,17 @@
+<form [formGroup]="form" class="p-3 m-0 form">
+  <p>Sign up</p>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" placeholder="Email" id="email" formControlName="email" class="form-control"/>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" placeholder="Password" id="password" formControlName="password" class="form-control"/>
+  </div>
+  <div class="mb-3">
+    <label for="cpassword" class="form-label">Password</label>
+    <input type="password" placeholder="Confirm Password" id="cpassword" formControlName="cpassword" class="form-control"/>
+  </div>
+  <button (click)="signup()" class="btn btn-primary mt-2">Sign up</button>
+</form>
+

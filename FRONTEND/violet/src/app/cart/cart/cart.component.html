@@ -1,0 +1,20 @@
+<div *ngIf="(offers$ | async)?.length; else emptyCart" class="mt-4">
+  <p>Total price: {{price}} €</p>
+  <div class="offers">
+    <div *ngFor="let o of offers$ | async" class="card">
+      <img src="{{o.img}}" alt="Offer image" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{o.name}}</h5>
+        <p class="card-text">{{o.price}} €</p>
+        <div class="btn btn-primary me-4" (click)="deleteFromCart(o)">Remove from cart</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <div class="alert alert-warning" role="alert">
+  <span class="alert-icon"><span class="visually-hidden">Warning</span></span>
+  <p>Your cart is empty</p>
+</div>
+</ng-template>

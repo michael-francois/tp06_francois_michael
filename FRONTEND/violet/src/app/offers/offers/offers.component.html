@@ -1,0 +1,16 @@
+<div class="p-3 m-0">
+  <label for="search" class="form-label">Search offers</label>
+  <input #searchInput id="search" class="form-control" (input)="search(searchInput.value)">
+
+  <div class="offers mt-4">
+    <div *ngFor="let o of offers$ | async" class="card">
+      <img src="{{o.img}}" alt="Offer image" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{o.name}}</h5>
+        <p class="card-text">{{o.price}} €</p>
+        <a routerLink="/offers/{{o.id}}" class="btn btn-primary me-4 mb-2">See details</a>
+        <div class="btn btn-primary mb-2" (click)="addCart(o.id)">Add to cart</div>
+      </div>
+    </div>
+  </div>
+</div>
